@@ -1,0 +1,55 @@
+apiVersion: machine.openshift.io/v1beta1
+kind: MachineSet
+metadata:
+  creationTimestamp: null
+  labels:
+    machine.openshift.io/cluster-api-cluster: vmware-lnzv5
+  name: vmware-lnzv5-infra
+  namespace: openshift-machine-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      machine.openshift.io/cluster-api-cluster: vmware-lnzv5
+      machine.openshift.io/cluster-api-machineset: vmware-lnzv5-infra
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        machine.openshift.io/cluster-api-cluster: vmware-lnzv5
+        machine.openshift.io/cluster-api-machine-role: infra
+        machine.openshift.io/cluster-api-machine-type: infra
+        machine.openshift.io/cluster-api-machineset: vmware-lnzv5-infra
+    spec:
+      metadata:
+        creationTimestamp: null
+        labels:
+          node-role.kubernetes.io/infra: ""
+      taints: 
+        - key: node-role.kubernetes.io/infra
+          effect: NoSchedule
+      providerSpec:
+        value:
+          apiVersion: vsphereprovider.openshift.io/v1beta1
+          credentialsSecret:
+            name: vsphere-cloud-credentials
+          diskGiB: 120
+          kind: VSphereMachineProviderSpec
+          memoryMiB: 32768
+          metadata:
+            creationTimestamp: null
+          network:
+            devices:
+            - networkName: LNX
+          numCPUs: 4
+          numCoresPerSocket: 4
+          snapshot: ""
+          template: vmware-lnzv5-rhcos
+          userDataSecret:
+            name: worker-user-data
+          workspace:
+            datacenter: BasementRack
+            datastore: QNAP-ISCSI-THIN
+            folder: /BasementRack/vm/vmware-lnzv5
+            resourcePool: /BasementRack/host/DL360G9/Resources
+            server: vcenter.randalllabs.com
