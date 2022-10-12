@@ -21,9 +21,9 @@ spec:
         size: 200G
       resources: 
         limits:
-          memory: "16Gi"
+          memory: "8Gi"
         requests:
-          memory: "16Gi"
+          memory: "8Gi"
       proxy: 
         resources:
           limits:
