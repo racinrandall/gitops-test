@@ -7,7 +7,7 @@ metadata:
   name: vmware-lnzv5-infra
   namespace: openshift-machine-api
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       machine.openshift.io/cluster-api-cluster: vmware-lnzv5
