@@ -1,0 +1,12 @@
+apiVersion: "autoscaling.openshift.io/v1beta1"
+kind: "MachineAutoscaler"
+metadata:
+  name: "ocp4-infra" 
+  namespace: "openshift-machine-api"
+spec:
+  minReplicas: 2 
+  maxReplicas: 4 
+  scaleTargetRef: 
+    apiVersion: machine.openshift.io/v1beta1
+    kind: MachineSet 
+    name: ocp4-lnzv5-infra
