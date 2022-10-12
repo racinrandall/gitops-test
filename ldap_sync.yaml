@@ -1,0 +1,26 @@
+kind: LDAPSyncConfig
+apiVersion: v1
+url: ldaps://bast-idm.randalllabs.com
+insecure: false 
+ca: "/etc/ipa/ca.crt"
+bindDN: "uid=admin,cn=users,cn=accounts,dc=randalllabs,dc=com"
+bindPassword: 'P@55word'
+rfc2307:
+    groupsQuery:
+        baseDN: "cn=groups,cn=accounts,dc=randalllabs,dc=com"
+        scope: sub
+        derefAliases: never
+        filter: (objectClass=groupOfNames)
+        pageSize: 0
+    groupUIDAttribute: dn 
+    groupNameAttributes: [ cn ] 
+    groupMembershipAttributes: [ member ] 
+    usersQuery:
+        baseDN: "cn=users,cn=accounts,dc=randalllabs,dc=com"
+        scope: sub
+        derefAliases: never
+        pageSize: 0
+    userUIDAttribute: dn 
+    userNameAttributes: [ uid ] 
+    tolerateMemberNotFoundErrors: false
+    tolerateMemberOutOfScopeErrors: false

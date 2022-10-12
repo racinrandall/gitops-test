@@ -1,0 +1,2 @@
+cn=openshift4,cn=groups,cn=accounts,dc=randalllabs,dc=com
+cn=openshift-admins,cn=groups,cn=accounts,dc=randalllabs,dc=com
