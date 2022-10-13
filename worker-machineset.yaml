@@ -1,10 +1,11 @@
 apiVersion: machine.openshift.io/v1beta1
 kind: MachineSet
 metadata:
+  annotations:
   creationTimestamp: null
   labels:
     machine.openshift.io/cluster-api-cluster: vmware-lnzv5
-  name: vmware-lnzv5-infra
+  name: vmware-lnzv5-worker
   namespace: openshift-machine-api
 spec:
   deletePolicy: Oldest
@@ -12,38 +13,34 @@ spec:
   selector:
     matchLabels:
       machine.openshift.io/cluster-api-cluster: vmware-lnzv5
-      machine.openshift.io/cluster-api-machineset: vmware-lnzv5-infra
+      machine.openshift.io/cluster-api-machineset: vmware-lnzv5-worker
   template:
     metadata:
-      creationTimestamp: null
       labels:
         machine.openshift.io/cluster-api-cluster: vmware-lnzv5
-        machine.openshift.io/cluster-api-machine-role: infra
-        machine.openshift.io/cluster-api-machine-type: infra
-        machine.openshift.io/cluster-api-machineset: vmware-lnzv5-infra
+        machine.openshift.io/cluster-api-machine-role: worker
+        machine.openshift.io/cluster-api-machine-type: worker
+        machine.openshift.io/cluster-api-machineset: vmware-lnzv5-worker
     spec:
       metadata:
         creationTimestamp: null
         labels:
-          node-role.kubernetes.io/infra: ""
-#      taints: 
-#        - key: node-role.kubernetes.io/infra
-#          effect: NoSchedule
+          node-role.kubernetes.io/worker: ""
       providerSpec:
         value:
-          apiVersion: vsphereprovider.openshift.io/v1beta1
+          apiVersion: machine.openshift.io/v1beta1
           credentialsSecret:
             name: vsphere-cloud-credentials
           diskGiB: 120
           kind: VSphereMachineProviderSpec
-          memoryMiB: 32768
+          memoryMiB: 8192 
           metadata:
             creationTimestamp: null
           network:
             devices:
             - networkName: LNX
-          numCPUs: 4
-          numCoresPerSocket: 4
+          numCPUs: 2
+          numCoresPerSocket: 2
           snapshot: ""
           template: vmware-lnzv5-rhcos
           userDataSecret:
