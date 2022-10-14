@@ -10,6 +10,69 @@ metadata:
     app.kubernetes.io/part-of: test-aap
   name: test-aap
   namespace: openshift-machine-api
+  managedFields:
+    - apiVersion: automationcontroller.ansible.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:loadbalancer_protocol': {}
+          'f:nodeport_port': {}
+          'f:projects_storage_access_mode': {}
+          .: {}
+          'f:projects_persistence': {}
+          'f:create_preload_data': {}
+          'f:admin_user': {}
+          'f:replicas': {}
+          'f:loadbalancer_port': {}
+          'f:route_tls_termination_mechanism': {}
+          'f:garbage_collect_secrets': {}
+          'f:image_pull_policy': {}
+          'f:projects_storage_size': {}
+          'f:ingress_type': {}
+          'f:task_privileged': {}
+      manager: Mozilla
+      operation: Update
+      time: null
+    - apiVersion: automationcontroller.ansible.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:conditions': {}
+      manager: ansible-operator
+      operation: Update
+      subresource: status
+      time: null
+    - apiVersion: automationcontroller.ansible.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app.kubernetes.io/component': {}
+            'f:app.kubernetes.io/managed-by': {}
+            'f:app.kubernetes.io/name': {}
+            'f:app.kubernetes.io/operator-version': {}
+            'f:app.kubernetes.io/part-of': {}
+      manager: OpenAPI-Generator
+      operation: Update
+      time: null
+    - apiVersion: automationcontroller.ansible.com/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:URL': {}
+          'f:adminPasswordSecret': {}
+          'f:adminUser': {}
+          'f:broadcastWebsocketSecret': {}
+          'f:image': {}
+          'f:postgresConfigurationSecret': {}
+          'f:secretKeySecret': {}
+          'f:version': {}
+      manager: OpenAPI-Generator
+      operation: Update
+      subresource: status
+      time: null
 spec:
   create_preload_data: true
   route_tls_termination_mechanism: Edge
