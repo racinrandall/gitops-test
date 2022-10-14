@@ -33,14 +33,14 @@ spec:
             name: vsphere-cloud-credentials
           diskGiB: 120
           kind: VSphereMachineProviderSpec
-          memoryMiB: 8192 
+          memoryMiB: 32768
           metadata:
             creationTimestamp: null
           network:
             devices:
             - networkName: LNX
-          numCPUs: 2
-          numCoresPerSocket: 2
+          numCPUs: 4
+          numCoresPerSocket: 4
           snapshot: ""
           template: vmware-lnzv5-rhcos
           userDataSecret:
