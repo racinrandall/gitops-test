@@ -1,0 +1,10 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: zabbix-operator-certified
+  namespace: openshift-operators 
+spec:
+  channel: lts
+  name: zabbix-operator-certified
+  source: redhat-operators 
+  sourceNamespace: openshift-marketplace 
