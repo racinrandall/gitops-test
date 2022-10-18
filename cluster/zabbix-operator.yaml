@@ -6,5 +6,5 @@ metadata:
 spec:
   channel: lts
   name: zabbix-operator-certified
-  source: redhat-operators 
+  source: certified-operators 
   sourceNamespace: openshift-marketplace 
