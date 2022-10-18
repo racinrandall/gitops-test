@@ -92,4 +92,3 @@ spec:
   web_size: 2
   zabbix_mysql_volumeclaim: mysql-volume-claim
   zabbix_mysqlsecret: zabbix-mysql-secrets
-  zabbix_url: zabbix.randalllabs.com
