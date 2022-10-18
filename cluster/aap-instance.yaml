@@ -1,7 +1,7 @@
 apiVersion: automationcontroller.ansible.com/v1beta1
 kind: AutomationController
 metadata:
-  name: example
+  name: randalllabs
   namespace: openshift-operators
 spec:
   create_preload_data: true
