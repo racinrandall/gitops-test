@@ -13,7 +13,7 @@ spec:
   projects_storage_size: 8Gi
   task_privileged: false
   projects_storage_access_mode: ReadWriteMany
-  projects_persistence: true
+  projects_persistence: false
   replicas: 3
   admin_user: admin
   loadbalancer_protocol: http
