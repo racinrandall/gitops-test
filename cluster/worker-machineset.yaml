@@ -33,7 +33,7 @@ spec:
             name: vsphere-cloud-credentials
           diskGiB: 120
           kind: VSphereMachineProviderSpec
-          memoryMiB: 32768
+          memoryMiB: 16384
           metadata:
             creationTimestamp: null
           network:
