@@ -47,7 +47,7 @@ spec:
             name: worker-user-data
           workspace:
             datacenter: BasementRack
-            datastore: QNAP-ISCSI-THIN
+            datastore: iSCSI
             folder: /BasementRack/vm/vmware-lnzv5
             resourcePool: /BasementRack/host/DL360G9/Resources
             server: vcenter.randalllabs.com
