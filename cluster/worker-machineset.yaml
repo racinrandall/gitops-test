@@ -1,0 +1,53 @@
+apiVersion: machine.openshift.io/v1beta1
+kind: MachineSet
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+    machine.openshift.io/cluster-api-cluster: vmware-gzzwl
+  name: vmware-gzzwl-worker
+  namespace: openshift-machine-api
+spec:
+  deletePolicy: Oldest
+  replicas: 2
+  selector:
+    matchLabels:
+      machine.openshift.io/cluster-api-cluster: vmware-gzzwl
+      machine.openshift.io/cluster-api-machineset: vmware-gzzwl-worker
+  template:
+    metadata:
+      labels:
+        machine.openshift.io/cluster-api-cluster: vmware-gzzwl
+        machine.openshift.io/cluster-api-machine-role: worker
+        machine.openshift.io/cluster-api-machine-type: worker
+        machine.openshift.io/cluster-api-machineset: vmware-gzzwl-worker
+    spec:
+      metadata:
+        creationTimestamp: null
+        labels:
+          node-role.kubernetes.io/worker: ""
+      providerSpec:
+        value:
+          apiVersion: machine.openshift.io/v1beta1
+          credentialsSecret:
+            name: vsphere-cloud-credentials
+          diskGiB: 120
+          kind: VSphereMachineProviderSpec
+          memoryMiB: 16384
+          metadata:
+            creationTimestamp: null
+          network:
+            devices:
+            - networkName: ocp
+          numCPUs: 4
+          numCoresPerSocket: 4
+          snapshot: ""
+          template: vmware-gzzwl-rhcos
+          userDataSecret:
+            name: worker-user-data
+          workspace:
+            datacenter: Basement
+            datastore: QNAP-ISCSI-THIN
+            folder: /Basement/vm/vmware-gzzwl
+            resourcePool: /BasementRack/host/DL360G9/Resources
+            server: vcenter.randalllabs.com
