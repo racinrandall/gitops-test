@@ -38,7 +38,7 @@ spec:
             creationTimestamp: null
           network:
             devices:
-            - networkName: LNX
+            - networkName: ocp
           numCPUs: 4
           numCoresPerSocket: 4
           snapshot: ""
@@ -46,7 +46,7 @@ spec:
           userDataSecret:
             name: worker-user-data
           workspace:
-            datacenter: BasementRack
+            datacenter: Basement
             datastore: QNAP-ISCSI-THIN
             folder: /Basement/vm/vmware-gzzwl
             resourcePool: /BasementRack/host/DL360G9/Resources
