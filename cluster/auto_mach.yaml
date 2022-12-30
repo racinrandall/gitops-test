@@ -9,4 +9,4 @@ spec:
   scaleTargetRef: 
     apiVersion: machine.openshift.io/v1beta1
     kind: MachineSet 
-    name: ocp4-lnzv5-worker
+    name: ocp4-gzzwl-worker
