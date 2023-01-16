@@ -1,0 +1,10 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: compliance-subscription
+  namespace: openshift-operators 
+spec:
+  channel: release-0.1
+  name: compliance-operator
+  source: redhat-operators 
+  sourceNamespace: openshift-marketplace 
