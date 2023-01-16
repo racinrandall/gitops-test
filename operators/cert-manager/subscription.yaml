@@ -1,11 +1,11 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: compliance-operator
+  name: openshift-cert-manager
   namespace: openshift-operators 
 spec:
-  channel: release-0.1
-  name: compliance-operator
+  channel: tech-preview
+  name: openshift-cert-manager
   source: redhat-operators 
   sourceNamespace: openshift-marketplace 
   installPlanApproval: Automatic
