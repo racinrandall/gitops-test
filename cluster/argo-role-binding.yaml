@@ -10,7 +10,6 @@ spec:
   name: openshift-gitops-operator 
   source: redhat-operators 
   sourceNamespace: openshift-marketplace 
-...
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -24,4 +23,3 @@ subjects:
   - kind: ServiceAccount
     name: openshift-gitops-argocd-application-controller
     namespace: openshift-gitops
-...
