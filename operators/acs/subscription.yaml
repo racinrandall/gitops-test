@@ -1,10 +1,11 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: compliance-subscription
+  name: rhacs-operator
   namespace: openshift-operators 
 spec:
-  channel: release-0.1
-  name: compliance-operator
+  channel: latest
+  name: rhacs-operator
   source: redhat-operators 
   sourceNamespace: openshift-marketplace 
+  installPlanApproval: Automatic

@@ -8,3 +8,4 @@ spec:
   name: zabbix-operator-certified
   source: certified-operators 
   sourceNamespace: openshift-marketplace 
+  installPlanApproval: Automatic
