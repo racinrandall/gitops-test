@@ -9,7 +9,7 @@ spec:
   installPlanApproval: Automatic
   name: openshift-gitops-operator 
   source: redhat-operators 
-  sourceNamespace: openshift-marketplace 
+  sourceNamespace: openshift-marketplace
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -26,6 +26,6 @@ spec:
       recurse: true
     path: cluster
     repoURL: https://github.com/racinrandall/gitops-test
-    targetRevision: baremetal
+    targetRevision: 4-12
   syncPolicy:
     automated: {}
